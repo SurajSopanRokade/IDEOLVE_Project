@@ -34,11 +34,9 @@ public class WordFileIndexer {
 	    for (String line : lines) {
 	        String[] words = line.split("\\W+");
 	        for (String word : words) {
-	            // Check if the word contains any digits
 	            if (word.isEmpty() || containsDigit(word)) continue;
 	            word = word.toLowerCase();
 	            if (!excludeWords.contains(word)) {
-	                // Simplified code for adding the word and page number to the index
 	                if (!index.containsKey(word)) {
 	                    index.put(word, new HashSet<>());
 	                }
